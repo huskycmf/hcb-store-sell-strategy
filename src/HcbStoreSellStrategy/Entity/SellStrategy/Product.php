@@ -18,7 +18,7 @@ class Product implements EntityInterface
      * @ORM\Id
      * @ORM\ManyToOne(targetEntity="HcbStoreSellStrategy\Entity\SellStrategy", inversedBy="product")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="store_sell_product_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="store_sell_strategy_id", referencedColumnName="id")
      * })
      */
     private $sellStrategy;
@@ -35,6 +35,13 @@ class Product implements EntityInterface
     private $sellProduct;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="store_product_id", type="integer", nullable=false, options={"unsigned"=true})
+     */
+    private $productId;
+
+    /**
      * @var Product
      *
      * @ORM\Id
@@ -44,6 +51,29 @@ class Product implements EntityInterface
      * })
      */
     private $product;
+
+    /**
+     * Set productId
+     *
+     * @param integer $productId
+     * @return Product
+     */
+    public function setProductId($productId)
+    {
+        $this->productId = $productId;
+
+        return $this;
+    }
+
+    /**
+     * Get productId
+     *
+     * @return integer 
+     */
+    public function getProductId()
+    {
+        return $this->productId;
+    }
 
     /**
      * Set sellStrategy

@@ -36,6 +36,7 @@ class SellStrategy implements EntityInterface
      * @ORM\OneToMany(targetEntity="HcbStoreSellStrategy\Entity\SellStrategy\Product", mappedBy="sellStrategy")
      */
     private $product;
+
     /**
      * Constructor
      */
