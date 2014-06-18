@@ -22,7 +22,7 @@ class VersionHcbStoreSellStrategy20140617163907 extends AbstractMigration
                           `store_sell_product_id` INT UNSIGNED NOT NULL,
                           `store_product_id` INT UNSIGNED NOT NULL,
                           INDEX `fk_store_product_sell_strategy_product_store_product1_idx` (`store_sell_product_id` ASC),
-                          PRIMARY KEY (`store_sell_strategy_id`, `store_sell_product_id`),
+                          PRIMARY KEY (`store_sell_strategy_id`, `store_sell_product_id`, `store_product_id`),
                           INDEX `fk_store_sell_strategy_product_store_product1_idx` (`store_product_id` ASC),
                           CONSTRAINT `fk_store_product_sell_strategy_has_products_store_product_sel1`
                             FOREIGN KEY (`store_sell_strategy_id`)
